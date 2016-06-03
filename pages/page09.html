@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS course</title>
+	<script type="text/javascript">
+	
+	//1. Деклация функция
+
+	function showMessage(text,n)
+	{
+		if( text === undefined || text === '' ||  text === null)
+		{
+			//window.alert('Празен текст на съобщението:' + text);
+			console.log('Празен текст на съобщението:',text);
+			text = 'Hello JavaScript';
+		}
+
+		if( n < 1 || n > 6)
+		{
+			console.log('Невалидна стойност на n:',n);
+			n = 3;
+		}
+		document.write('<h'+n+'>' + text + '</h'+n+'>');
+	}
+
+	//2. Извикваме я
+	var msg;
+
+	showMessage('Успешна регистрация в сайта', 3);
+	showMessage('Продуктът не е в наличност', 10);
+	showMessage( msg , 2);
+
+	</script>
+</head>
+<body>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, amet reprehenderit nihil fugit eaque provident cum explicabo laborum deleniti ullam? Nulla suscipit eveniet quibusdam, culpa ex magnam aspernatur tempore deserunt?
+	</p>
+	<noscript>
+		Моля разрешете изпълнението на JS за да ползвате услугите на сайта.
+	</noscript>
+</body>
+</html>
