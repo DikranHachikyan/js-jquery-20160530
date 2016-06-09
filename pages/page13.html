@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS course</title>
+	<script type="text/javascript">
+	
+	</script>
+</head>
+<body>
+	<input type="button" value="Click Me!" id="btn" >
+
+	<p class="txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, amet reprehenderit nihil fugit eaque provident cum explicabo laborum deleniti ullam? Nulla suscipit eveniet quibusdam, culpa ex magnam aspernatur tempore deserunt?
+	</p>
+
+	<label>
+		<input type="checkbox" id="cb" >I Agree ...
+	</label>
+	<noscript>
+		Моля разрешете изпълнението на JS за да ползвате услугите на сайта.
+	</noscript>
+		<!-- Ако използваме src, между етикетите script не трябва да пишемкод -->
+	<script src="../js/jquery-2.2.4.min.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#btn').on('click', function(){
+				window.alert('click event!');	
+			}); //on btn click
+
+			$('#cb').on('click', function(){
+				window.alert('click event');	
+			});//on checkbox cb click
+
+			$('#cb').change(function(){
+				window.alert('change event!');
+			});//on change cb
+
+			$('.txt').mouseover(function(){
+				$('.txt').css('background-color','#ccc');
+			});//on mouse over 
+			$('.txt').mouseout(function(){
+				$('.txt').css('background-color','#fff');
+			});//on mouse out
+		});//on document ready
+	</script>
+</body>
+</html>
