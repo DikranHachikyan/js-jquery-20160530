@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS course</title>
+	
+</head>
+<body>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat reprehenderit voluptatem consectetur aut voluptas, molestias ad dignissimos odit fuga ipsa aspernatur quae quam dolorem deserunt doloribus ex tempora adipisci tempore!
+	</p>
+	
+	<p id="info"></p>
+
+	<p id="test"></p>
+
+	<div id="text"></div>
+	<noscript>
+		Моля разрешете изпълнението на JS за да ползвате услугите на сайта.
+	</noscript>
+
+	<!-- Ако използваме src, между етикетите script не трябва да пишемкод -->
+	<script src="../js/jquery-2.2.4.min.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('p').prepend('<strong>Text:</strong>');
+			$('p').append('<a href="#">Read More</a>');
+			$('p').before('<hr />');
+			$('p').after('<hr width="50%" />');
+
+			$('p#info').html('Quasi <strong>temporibus</strong> quos ut doloremque, quisquam natus?');
+
+			$('p#test strong').after('Quasi <strong>temporibus</strong> quos ut doloremque, quisquam natus?');
+
+			$('div#text').text('Quasi <strong>temporibus</strong> quos ut doloremque, quisquam natus?');
+		});
+	</script>
+</body>
+</html>

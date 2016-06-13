@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS course</title>
+	<style>
+		
+	</style>
+</head>
+<body>
+	<h3>Често задавани въпроси</h3>
+	<dl>
+		<dt><a href="#">Lorem ipsum dolor sit amet, consectetur?</a></dt>
+		<dd>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem praesentium ad, eligendi ab saepe natus repudiandae ex necessitatibus. Sit nam autem a ratione, possimus id impedit veritatis consequuntur voluptatem dicta.
+		</dd>
+		<dt><a href="#">Molestias sed beatae sequi dicta?</a></dt>
+		<dd>
+			Molestias sed beatae sequi dicta, alias quidem provident optio voluptatibus odio at, ex praesentium, modi porro ratione itaque voluptatum sint. Sint, corrupti!
+		</dd>
+		<dt><a href="#">Ab officiis quaerat neque animi expedita?</a></dt>
+		<dd>
+			Ab officiis quaerat neque animi expedita molestiae, nobis, asperiores dolorem commodi pariatur ipsa consequuntur, ipsum. Quidem magni ullam sit voluptatum, inventore laborum.
+		</dd>
+		<dt><a href="#">Alias porro quas enim maxime! Natus voluptatum?</a></dt>
+		<dd>
+			Alias porro quas enim maxime! Natus voluptatum, mollitia eveniet molestias soluta temporibus, animi consectetur doloremque quisquam suscipit at similique reprehenderit, dolore itaque.
+		</dd>
+		<dt><a href="#">Nisi sed eos ullam dolorem recusandae obcaecati?</a></dt>
+		<dd>
+			Nisi sed eos ullam dolorem recusandae obcaecati, laudantium doloremque tempore nihil quam! Delectus in sed, adipisci quaerat ut! Sed commodi incidunt vel.
+		</dd>
+	</dl>
+	<noscript>
+		Моля разрешете изпълнението на JS за да ползвате услугите на сайта.
+	</noscript>
+
+	<!-- Ако използваме src, между етикетите script не трябва да пишемкод -->
+	<script src="../js/jquery-2.2.4.min.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('dd').hide();
+
+			$('dt').click(function(){
+				$(this).next().slideToggle();	
+			});
+
+		});
+	</script>
+</body>
+</html>

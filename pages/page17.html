@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS course</title>
+	<style>
+		ul{
+			list-style:none;
+		}
+		li a {
+			text-decoration: none;
+		}
+		li img {
+			margin-right: 5px;
+		}
+	</style>
+</head>
+<body>
+	
+	<ul>
+		<li><a href="video.mp4">Video Tutorial</a></li>
+		<li><a href="book.mp3">Audio Book</a></li>
+		<li><a href="javascript.pdf">Mastering jQuery</a></li>
+		<li><a href="cv.doc">My Resume</a></li>
+	</ul>
+	<noscript>
+		Моля разрешете изпълнението на JS за да ползвате услугите на сайта.
+	</noscript>
+
+	<!-- Ако използваме src, между етикетите script не трябва да пишемкод -->
+	<script src="../js/jquery-2.2.4.min.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('a[href$="mp4"]').before('<img src="../images/video-x-generic.png" alt="" />');
+			$('a[href$="mp3"]').before('<img src="../images/audio-x-generic.png" alt="" />');
+			$('a[href$="pdf"]').before('<img src="../images/package-x-generic.png" alt="" />');
+			$('a[href$="doc"]').before('<img src="../images/x-office-document.png" alt="" />');
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS course</title>
+	
+</head>
+<body>
+	<p id="intro" title="Text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat reprehenderit voluptatem consectetur aut voluptas, molestias ad dignissimos odit fuga ipsa aspernatur quae quam dolorem deserunt doloribus ex tempora adipisci tempore!
+	</p>
+	<div class="txt">Dignissimos quas  <a href="http://btv.bg" title="external">dicta</a> nihil sapiente rerum, distinctio fugit illo quos mollitia sequi hic, est consequuntur, saepe tempore, expedita temporibus dolor? Id autem dolore vitae laborum nisi, aspernatur unde vero molestiae.
+	</div>
+	
+	<p>Fugit magni <a href="http://dir.bg" title="external link">commodi dolorum</a>, repellendus ducimus recusandae aut consectetur! Quis facilis, ratione eveniet fugiat error repellat soluta qui, eum. Repudiandae dicta mollitia nostrum reprehenderit eos nobis ea quis, magnam eligendi.
+	</p>
+	
+	<p>
+	Obcaecati, a <a href="./page11.html" title="page">maxime fuga</a> iusto ducimus dolorem doloribus, dolorum, soluta, laboriosam hic similique quibusdam? Minima, facere quam quos a doloremque, dolores fugit tenetur consectetur cumque aut vel voluptate repellat explicabo?
+	</p>
+	
+	<p>
+	Explicabo <a href="./page05.html">voluptatibus</a> modi quo necessitatibus eos, facilis quasi corporis, molestiae perferendis eveniet, fugit aspernatur suscipit consequuntur molestias natus! Aut nesciunt blanditiis quam fuga reiciendis minus accusamus itaque at inventore veniam!
+	</p>
+
+	<noscript>
+		Моля разрешете изпълнението на JS за да ползвате услугите на сайта.
+	</noscript>
+
+	<!-- Ако използваме src, между етикетите script не трябва да пишемкод -->
+	<script src="../js/jquery-2.2.4.min.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('[title]').css('border', '2px solid blue');
+			$('a[title]').css('border', '2px solid green');
+
+			$('a[title="external"]').css('background-color', 'yellow');			
+
+			$('[href^="http"]').css('font-size', '20px');
+			$('[href$="html"]').css('color', 'red');
+		});
+	</script>
+</body>
+</html>
