@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS course</title>
+	<style>
+		ul {
+		    list-style: none;
+		}
+	
+	.list-item img {
+			max-width: 150px;
+	
+		}
+	.list-item {
+		float: left;
+		margin-right: 10px;
+  		margin-bottom:30px
+		}
+
+	#btns{
+		clear: both;
+		}
+	</style>
+</head>
+<body>
+	<ul id="gallery">
+		<li class="list-item"><img src="../pics-large/pic1.jpg" alt=""></li>
+		<li class="list-item"><img src="../pics-large/pic2.jpg" alt=""></li>
+		<li class="list-item"><img src="../pics-large/pic3.jpg" alt=""></li>
+		<li class="list-item"><img src="../pics-large/pic4.jpg" alt=""></li>
+		<li class="list-item"><img src="../pics-large/pic5.jpg" alt=""></li>
+		<li class="list-item"><img src="../pics-large/pic6.jpg" alt=""></li>
+	</ul>
+
+	<div id="btns">
+		<input type="button" id="prv" value="Previous">
+		<input type="button" id="nxt" value="Next">
+	</div>
+	<noscript>
+		Моля разрешете изпълнението на JS за да ползвате услугите на сайта.
+	</noscript>
+
+	<!-- Ако използваме src, между етикетите script не трябва да пишемкод -->
+	<script src="../js/jquery-2.2.4.min.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#gallery li').removeClass('list-item');
+			$('#gallery li+li').hide();
+
+			$('#nxt').click(function(){	
+				$('#gallery li:first-child').appendTo('#gallery');
+				$('#gallery li:last-child').hide();
+				$('#gallery li:first-child').show();
+			}); //on click button next 
+
+			$('#prv').click(function(){
+				$('#gallery li:first-child').hide();
+				$('#gallery li:last-child').prependTo('#gallery');
+				$('#gallery li:first-child').show();
+
+			}); //on button prv click
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS course</title>
+	<style>
+		#gallery li+li {
+		    display: none;
+		}
+		ul {
+		    list-style: none;
+		}
+	</style>
+</head>
+<body>
+	<ul id="gallery">
+		<li><img src="../pics-large/pic1.jpg" alt=""></li>
+		<li><img src="../pics-large/pic2.jpg" alt=""></li>
+		<li><img src="../pics-large/pic3.jpg" alt=""></li>
+		<li><img src="../pics-large/pic4.jpg" alt=""></li>
+		<li><img src="../pics-large/pic5.jpg" alt=""></li>
+		<li><img src="../pics-large/pic6.jpg" alt=""></li>
+	</ul>
+
+	<div id="btns">
+		<input type="button" id="prv" value="Previous">
+		<input type="button" id="btn" value="Auto">
+		<input type="button" id="nxt" value="Next">
+	</div>
+	<noscript>
+		Моля разрешете изпълнението на JS за да ползвате услугите на сайта.
+	</noscript>
+
+	<!-- Ако използваме src, между етикетите script не трябва да пишемкод -->
+	<script src="../js/jquery-2.2.4.min.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var intervalID = 0;
+
+			$('#nxt').click(function(){	
+				showNextImage();
+			}); //on click button next 
+
+			$('#prv').click(function(){
+				showPreviousImage();
+			}); //on button prv click
+
+			$('#btn').click(function(){
+
+				if( intervalID === 0)
+				{
+					intervalID = window.setInterval(function(){
+						showNextImage();	
+					},2000);//set interval
+					$(this).val('Stop');	
+				}
+				else
+				{
+					window.clearInterval( intervalID);
+					intervalID = 0;
+					$(this).val('Auto');
+				}
+
+			});//on click button Auto
+		});
+		//-----------------------------------------------------
+		// Show Previous Image
+		//-----------------------------------------------------
+			function showPreviousImage(){
+				$('#gallery li:last-child').prependTo('#gallery');
+			}	
+		//-----------------------------------------------------
+
+		//-----------------------------------------------------
+		//  Show Next Image
+		//-----------------------------------------------------
+			function showNextImage(){
+				$('#gallery li:first-child').appendTo('#gallery');
+			}
+		//-----------------------------------------------------
+	</script>
+</body>
+</html>
