@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS course</title>
+	<style>
+	
+	  ul {
+		    list-style: none;
+		}
+	.list-item {
+		float: left;
+		margin-right: 10px;
+  		margin-bottom:30px
+		}
+	</style>
+</head>
+<body>
+	<ul id="gallery">
+		<li class="list-item"><img src="../pics-small/pic1.jpg" data-large-image="pic1-320x240.jpg" alt=""></li>
+		<li class="list-item"><img src="../pics-small/pic2.jpg" data-large-image="pic2-320x240.jpg" alt=""></li>
+		<li class="list-item"><img src="../pics-small/pic3.jpg" data-large-image="pic3-320x240.jpg" alt=""></li>
+		<li class="list-item"><img src="../pics-small/pic4.jpg" data-large-image="pic4-320x240.jpg" alt=""></li>
+		<li class="list-item"><img src="../pics-small/pic5.jpg" data-large-image="pic5-320x240.jpg" alt=""></li>
+		<li class="list-item"><img src="../pics-small/pic6.jpg" data-large-image="pic6-320x240.jpg" alt=""></li>
+	</ul>
+  
+    <div style="clear:both">
+    	<img src="../pics-large/pic1.jpg" id="pic" alt="">
+    </div>
+
+	<noscript>
+		Моля разрешете изпълнението на JS за да ползвате услугите на сайта.
+	</noscript>
+
+	<!-- Ако използваме src, между етикетите script не трябва да пишемкод -->
+	<script src="../js/jquery-2.2.4.min.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+			$('li.list-item img').mouseover(function(){
+				var imgSrc = $(this).attr('src');
+				var lgImage = $(this).data('large-image');
+				var path = imgSrc.slice(0, imgSrc.lastIndexOf('/'));
+
+				$('#pic').attr('src', path + '/' + lgImage );
+				//console.log('lgImage=', lgImage);
+				//console.log('path=', path );
+			});//on mouse over image
+			
+		});
+	
+	</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS course</title>
+	<style>
+	
+	  ul {
+		    list-style: none;
+		}
+	.list-item {
+		float: left;
+		margin-right: 10px;
+  		margin-bottom:30px
+		}
+	</style>
+</head>
+<body>
+	<ul id="gallery">
+		<li class="list-item"><img src="../pics-small/pic1.jpg" alt=""></li>
+		<li class="list-item"><img src="../pics-small/pic2.jpg" alt=""></li>
+		<li class="list-item"><img src="../pics-small/pic3.jpg" alt=""></li>
+		<li class="list-item"><img src="../pics-small/pic4.jpg" alt=""></li>
+		<li class="list-item"><img src="../pics-small/pic5.jpg" alt=""></li>
+		<li class="list-item"><img src="../pics-small/pic6.jpg" alt=""></li>
+	</ul>
+  
+    <div style="clear:both">
+    	<img src="../pics-large/pic1.jpg" id="pic" alt="">
+    </div>
+
+	<noscript>
+		Моля разрешете изпълнението на JS за да ползвате услугите на сайта.
+	</noscript>
+
+	<!-- Ако използваме src, между етикетите script не трябва да пишемкод -->
+	<script src="../js/jquery-2.2.4.min.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+			$('li.list-item img').mouseover(function(){
+				var imgSrc = $(this).attr('src');
+
+				imgSrc = imgSrc.replace('small','large');
+
+				$('#pic').attr('src', imgSrc );
+
+				//console.log('src=', imgSrc);
+			});//on mouse over image
+			
+		});
+	
+	</script>
+</body>
+</html>
